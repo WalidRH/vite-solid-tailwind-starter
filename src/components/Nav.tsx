@@ -2,18 +2,17 @@ import { Component, createMemo, createSignal, For } from 'solid-js';
 import { Link, useRouter } from 'solid-app-router'
 
 const Nav: Component = () => {
-  const [showProfileMenu, setShowProfileMenu] = createSignal(false)
-  const [showMenu, setShowMenu] = createSignal(false)
-  const router = useRouter()
-  const currentLocation = createMemo(() => router[0].location)
+  const [showProfileMenu, setShowProfileMenu] = createSignal(false);
+  const [showMenu, setShowMenu] = createSignal(false);
+  const router = useRouter();
+  const currentLocation = createMemo(() => router[0].location);
 
-  const links = createMemo(() => [
+  const links = [
     { text: 'Home', to: '/' },
     { text: 'About', to: '/about' },
-  ])
-
-  const activeClass = 'text-white bg-gray-900'
-  const inactiveClass = 'text-gray-300 hover:text-white hover:bg-gray-700'
+  ];
+  const activeClass = 'text-white bg-gray-900';
+  const inactiveClass = 'text-gray-300 hover:text-white hover:bg-gray-700';
 
   return (
     <nav class="bg-gray-800">
@@ -29,7 +28,7 @@ const Nav: Component = () => {
             </div>
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4">
-                <For each={links()}>
+                <For each={links}>
                     {(link, index) => (<Link
                         href={link.to}
                         class={`px-3 py-2 rounded-md text-sm font-medium ${
@@ -149,7 +148,7 @@ const Nav: Component = () => {
       {/* Menu open: "block", Menu closed: "hidden" */}
       <div class={`md:hidden ${showMenu() ? 'block' : 'hidden'}`}>
         <div class="px-2 pt-2 pb-3 sm:px-3">
-            <For each={links()}>
+            <For each={links}>
                 {(link, index) => (
                   <Link href={link.to} class={`block px-3 py-2 rounded-md text-sm font-medium ${
                     currentLocation() === link.to ? activeClass : inactiveClass } ${index() > 0 && 'mt-1'}`}
