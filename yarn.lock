@@ -1118,6 +1118,11 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
+solid-app-router@^0.0.50:
+  version "0.0.50"
+  resolved "https://registry.yarnpkg.com/solid-app-router/-/solid-app-router-0.0.50.tgz#8c5d1ddba936abe2bde3fcafb1b6e1c85b73ac2c"
+  integrity sha512-TjaTCuvDeBEqTiIYcvGltM/Ae9y/qurOr5g47DvMdgR/8XiMhoktBH9weISXcxqb4KE4cVaaoAV+G+5tboEDEA==
+
 solid-js@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-1.0.0.tgz#4bbc3f3932c604e2bfcd35d5a7f20408d208288e"
